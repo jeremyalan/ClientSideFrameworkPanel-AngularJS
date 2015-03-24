@@ -5,6 +5,22 @@ angular.module('app', [])
          {
             Name: 'starter-pack',
             DisplayText: 'Starter Pack'
+         },
+         {
+            Name: 'pain-points',
+            DisplayText: 'Pain Points'
+         },
+         {
+            Name: 'productivity',
+            DisplayText: 'Productivity'
+         },
+         {
+            Name: 'common-scenarios',
+            DisplayText: 'Common Scenarios'
+         },
+         {
+            Name: 'getting-started',
+            DisplayText: 'Getting Started'
          }
       ];
 

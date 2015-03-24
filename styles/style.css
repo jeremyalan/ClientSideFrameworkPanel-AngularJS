@@ -35,3 +35,7 @@ table.dl td {
     font-style: italic;
     color: #999;
 }
+
+.underline {
+    text-decoration: underline;
+}

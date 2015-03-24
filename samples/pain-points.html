@@ -1,0 +1,67 @@
+<div>
+   <h3>Pain Points</h3>
+   <hr/>
+
+   <div>
+      <ul type="bullet">
+         <li>
+            <h4>Managing $scope</h4>
+            <h5>Scope Inheritance when binding to primitives</h5>
+            <div>
+<pre>&lt;div ng-controller="ParentCtrl"&gt;
+
+   &lt;-- This text block never updates --&gt;
+   &lt;span&gt;(( firstName ))&lt;/span&gt;
+
+   &lt;div ng-controller="ChildCtrl"&gt;
+      &lt;input type="text" ng-model="firstName" /&gt;
+   &lt;/div&gt;
+&lt;/div&gt;</pre>
+            </div>
+
+            <h5>Common work-around:</h5>
+            <ul>
+               <li>Always use a period (.) in ng-model binding expressions</li>
+               <li>Use ControllerAs syntax to leverage "named scopes"</li>
+            </ul>
+
+            <div class="footnote" style="margin-top: 1em">
+               <div>Check out "Mastering Angular $scope" presented at KCDC 2014</div>
+               <div>
+                  <a href="https://jeremyalan.github.io/MasteringAngularScope" target="_blank">https://jeremyalan.github.io/MasteringAngularScope</a>
+               </div>
+            </div>
+         </li>
+         <li>
+            <h4>Directives API</h4>
+            <ul>
+               <li>
+                  <div>Scope binding in directives (e.g. isolated scopes)</div>
+               </li>
+               <li>Transclusion (wtf?)</li>
+            </ul>
+         </li>
+         <li>
+            <h4>$digest Cycle</h4>
+            <ul>
+               <li>$scope changes made asynchronously do not appear</li>
+               <li>Responding to DOM events in directives (click, mouseover, etc.)</li>
+
+            </ul>
+
+            <h5>Common work-around:</h5>
+            <ul>
+               <li>Use Angular services whereever possible. $http vs. $.ajax, $timeout vs. setTimeout, etc.</li>
+               <li>If not possible, call $scope.$apply or $scope.$digest</li>
+            </ul>
+         </li>
+         <li>
+            <h4>Code Structure</h4>
+            <ul>
+               <li>Organizing files</li>
+               <li>Breaking application into separate modules</li>
+            </ul>
+         </li>
+      </ul>
+   </div>
+</div>
