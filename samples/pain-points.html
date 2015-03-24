@@ -21,8 +21,16 @@
 
             <h5>Common work-around:</h5>
             <ul>
-               <li>Always use a period (.) in ng-model binding expressions</li>
-               <li>Use ControllerAs syntax to leverage "named scopes"</li>
+               <li>
+                  <div>Always use a period (.) in ng-model binding expressions</div>
+                  <pre>&lt;input type="text" ng-model="model.firstName"/&gt;</pre>
+               </li>
+               <li>
+                  <div>Use ControllerAs syntax to leverage "named scopes"</div>
+<pre>&lt;div ng-controller="MainCtrl as main"&gt;
+   &lt;input type="text" ng-model="main.firstName" /&gt;
+&lt;/div&gt;</pre>
+               </li>
             </ul>
 
             <div class="footnote margin-top">
@@ -39,6 +47,7 @@
                   <div>Scope binding in directives (e.g. isolated scopes)</div>
                </li>
                <li>Transclusion (wtf?)</li>
+               <li>Compile/Link separation</li>
             </ul>
          </li>
          <li>
