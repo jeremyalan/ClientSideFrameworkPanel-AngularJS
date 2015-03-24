@@ -1,0 +1,114 @@
+<div>
+   <h3>Common Scenarios</h3>
+   <hr/>
+
+   <div>
+      <ul type="bullet" class="primary-list">
+         <li>
+            <h4>URL Routing</h4>
+
+            <div>
+               <strong>Pro Tip: </strong>
+               <span>Always use ui-router, DO NOT USE built-in ng-view</span>
+            </div>
+
+            <div class="margin-top">
+<pre>$stateProvider.state('app', {
+   abstract: true,
+   url: '',
+   template: '''
+     &lt;div class="container"&gt;
+       &lt;div class="row"&gt;
+         &lt;div class="col-xs-3"&gt;
+           <span class="highlight">&lt;div ui-view="sidebar"&gt;&lt;/div&gt;</span>
+         &lt;/div&gt;
+         &lt;div class="col-xs-9"&gt;
+           <span class="highlight">&lt;div ui-view="main"&gt;&lt;/div&gt;</span>
+         &lt;/div&gt;
+       &lt;/div&gt;
+     &lt;/div&gt;
+   '''
+
+$stateProvider.state('app.home', {
+  url: '/home',
+  views: {
+    <span class="highlight">'sidebar'</span>: {
+      controller: 'SidebarCtrl',
+      templateUrl: 'templates/sidebar.html',
+    },
+    <span class="highlight">'main'</span>: {
+      controller: 'MainCtrl',
+      templateUrl: 'templates/main.html'
+    }
+  }
+});</pre>
+            </div>
+         </li>
+         <li>
+            <h4>Data Access</h4>
+            <ul>
+               <li>Use built-in or custom services to make calls to backend or load data from client-side storage</li>
+               <li>
+                  <div>Several options available:</div>
+                  <table class="dl">
+                     <tr>
+                        <th>ngResource</th>
+                        <td>Built by Angular team, available as custom module 'ngResource'.  Useful when working with RESTful services.</td>
+                     </tr>
+                     <tr>
+                        <th>Restangular</th>
+                        <td>Community plugin, similar to ngResource but provides more flexibility and customization.</td>
+                     </tr>
+                     <tr>
+                        <th>$http</th>
+                        <td>
+                           Low-level HTTP library provided by Angular Core.  Not necessarily recommended, prefer to wrap
+                           usage with custom services.
+                        </td>
+                     </tr>
+                     <tr>
+                        <th>Custom Services</th>
+                        <td>
+                           We use a code-generation template to convert our Web API interfaces in .NET to Angular services.
+                        </td>
+                     </tr>
+                  </table>
+               </li>
+            </ul>
+         </li>
+         <li>
+            <h4>Data Binding</h4>
+            <ul>
+               <li>Strong separation between Controller and View</li>
+               <li>$scope allows different features (controllers, views, directives) to share data</li>
+               <li>Two-way data binding via HTML expressions or wired up manually via $scope.$watch</li>
+            </ul>
+         </li>
+         <li>
+            <h4>Third-party plugins</h4>
+            <ul>
+               <li>Most jQuery plugins can be wrapped in a directive</li>
+               <li>Sometimes, it's easier and more performant to re-implement plugins in Angular</li>
+            </ul>
+         </li>
+         <li>
+            <h4>Documentation</h4>
+            <ul>
+               <li>
+                  <span>Available at </span>
+                  <a href="https://docs.angularjs.org/api" target="_blank">https://docs.angularjs.org/api</a>
+               </li>
+               <li>Generated via js-doc code documentation, so always up-to-date and relevant.</li>
+               <li>
+                  API Reference Guide, not always great for beginners, usually helps to already know what you're
+                  looking for.
+               </li>
+               <li>
+                  Some high-level concepts are documented, but usually better just to go to the web and read articles
+                  published by the community.
+               </li>
+            </ul>
+         </li>
+      </ul>
+   </div>
+</div>

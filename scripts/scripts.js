@@ -26,6 +26,8 @@ angular.module('app', [])
 
       $scope.select = function (sample) {
          $scope.selectedSample = sample;
+
+         $scope.isMenuVisible = false;
       };
 
       $scope.select($scope.samples[0]);

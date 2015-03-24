@@ -47,3 +47,8 @@ table.dl td {
 ul.primary-list > li + li {
     margin-top: 50px;
 }
+
+pre .highlight {
+    font-weight: bold;
+    background: #ccc;
+}
