@@ -3,7 +3,7 @@
    <hr/>
 
    <div>
-      <ul type="bullet">
+      <ul type="bullet" class="primary-list">
          <li>
             <h4>Managing $scope</h4>
             <h5>Scope Inheritance when binding to primitives</h5>
@@ -25,7 +25,7 @@
                <li>Use ControllerAs syntax to leverage "named scopes"</li>
             </ul>
 
-            <div class="footnote" style="margin-top: 1em">
+            <div class="footnote margin-top">
                <div>Check out "Mastering Angular $scope" presented at KCDC 2014</div>
                <div>
                   <a href="https://jeremyalan.github.io/MasteringAngularScope" target="_blank">https://jeremyalan.github.io/MasteringAngularScope</a>
@@ -46,13 +46,13 @@
             <ul>
                <li>$scope changes made asynchronously do not appear</li>
                <li>Responding to DOM events in directives (click, mouseover, etc.)</li>
-
-            </ul>
-
-            <h5>Common work-around:</h5>
-            <ul>
-               <li>Use Angular services whereever possible. $http vs. $.ajax, $timeout vs. setTimeout, etc.</li>
-               <li>If not possible, call $scope.$apply or $scope.$digest</li>
+               <li>
+                  <h5>Common work-around:</h5>
+                  <ul>
+                     <li>Use Angular services wherever possible. $http vs. $.ajax, $timeout vs. setTimeout, etc.</li>
+                     <li>If not possible, call $scope.$apply or $scope.$digest</li>
+                  </ul>
+               </li>
             </ul>
          </li>
          <li>
